@@ -1,15 +1,15 @@
-import React from 'react'
 
-const ProductDetailLayout = ({children}:{
-    children:{
-        children:React.ReactNode
-    }
+const ProductDetailLayout = ({
+  children,
+}: {
+  children: React.ReactNode
 }) => {
   return (
-    <>
+    <div>
+      <h2>Feature Product </h2>
       {children}
-      <h2>Feature Product</h2>
-    </>
+      
+      </div>
   )
 }
 
