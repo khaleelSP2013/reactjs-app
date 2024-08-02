@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import './styles.css'
 
+
 const navLinks=[
     {name:"Register", href:"/register"},
     {name:"Login", href:"/login"},
@@ -18,11 +19,12 @@ const AuthLayout = ({children} :{
     const [input,setInput]=useState("");
   return (
     <>
-   
-      {navLinks.map((link)=>{
+    <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div className="text-sm lg:flex-grow">
+    {navLinks.map((link)=>{
         const isActive=pathname.startsWith(link.href)
     return(
-    <Link href={link.href} key={link.name} className={isActive?"font-bold mr-4":"text-blue-500 mr-4"}>
+    <Link href={link.href} key={link.name} className={isActive?"font-bold mr-4":"text-teal-500 mr-4"}>
         {link.name}
     </Link>
     
@@ -30,6 +32,8 @@ const AuthLayout = ({children} :{
       }
       
       )}
+    </div>
+    </div>
       <br />
        <input value={input} onChange={(e)=> setInput(e.target.value)}/>
       {children}
